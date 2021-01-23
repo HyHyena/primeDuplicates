@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.homework.simpleduplicates.utils.PrimeFinder;
 
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -28,7 +27,7 @@ public class SimpleDuplicatesService implements DuplicatesService{
                 if (value == null)
                     duplicates.put(number, 1L);
                 else {
-                    duplicates.put(number, ++value);
+                    duplicates.put(number, value + 1);
                 }
             }
         }

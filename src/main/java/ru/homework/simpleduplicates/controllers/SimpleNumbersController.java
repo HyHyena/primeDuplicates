@@ -1,6 +1,7 @@
 package ru.homework.simpleduplicates.controllers;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import ru.homework.simpleduplicates.services.DuplicatesService;
 
@@ -15,6 +16,7 @@ public class SimpleNumbersController {
 
     private final DuplicatesService duplicatesService;
 
+    @Autowired
     public SimpleNumbersController(DuplicatesService duplicatesService) {
         this.duplicatesService = duplicatesService;
     }
