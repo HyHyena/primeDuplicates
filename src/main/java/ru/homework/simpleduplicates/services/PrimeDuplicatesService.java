@@ -4,17 +4,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.homework.simpleduplicates.utils.PrimeFinder;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 @Service
-public class SimpleDuplicatesService implements DuplicatesService{
+public class PrimeDuplicatesService implements DuplicatesService{
 
     private final PrimeFinder primeFinder;
 
     @Autowired
-    public SimpleDuplicatesService(PrimeFinder primeFinder) {
+    public PrimeDuplicatesService(PrimeFinder primeFinder) {
         this.primeFinder = primeFinder;
     }
 
@@ -31,7 +33,9 @@ public class SimpleDuplicatesService implements DuplicatesService{
                 }
             }
         }
-        return duplicates;
+        return duplicates.entrySet().stream()
+                .filter(entry -> entry.getValue() != 1)
+                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
     }
 
 }
