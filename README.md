@@ -1,5 +1,5 @@
-This is a duplicate of prime numbers finder project.
-To run this project make sure you have cloned this project, installed and launched Docker daemon, curl or postman/soapUI. 
+This is a duplicate primes finder project.
+To run this project make sure you have cloned this project, installed and launched Docker daemon, have curl or postman/soapUI. 
 
 Then run followings:
 
